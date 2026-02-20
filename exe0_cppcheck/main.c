@@ -16,5 +16,5 @@ int main(void) {
         arr[i] = i;
     }
 
-    return 0;
+    return 2;
 }

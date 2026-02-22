@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define NUM_ELEMENTS 5
+#define NUM_ELEMENTS 4
 
 int multiplyNumbers(int x, int y) {
     int product = x * y;
+    return product;
 }
 
 int main(void) {
-    int a, b = 5; //uninitvar, legacyUninitvar
+    int a=6, b = 5; //uninitvar, legacyUninitvar
     int result = multiplyNumbers(a, b);
 
     int arr[NUM_ELEMENTS];
@@ -16,5 +17,5 @@ int main(void) {
         arr[i] = i;
     }
 
-    return 2;
+    return 0;
 }

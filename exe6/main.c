@@ -39,10 +39,9 @@ void seven_seg_display(int cnt) {
 
 int main() {
     stdio_init_all();
-    int BUTTON_GPIO;
+
     int cnt=0;
     int last_btn=0;
-    BUTTON_GPIO = FIRST_GPIO + 7;
 
     gpio_init(BTN_PIN_G);
     gpio_set_dir(BTN_PIN_G, GPIO_IN);

@@ -5,6 +5,7 @@
 
 int multiplyNumbers(int x, int y) {
     int product = x * y;
+    printf(product);
     return product;
 }
 
@@ -15,6 +16,7 @@ int main(void) {
     int arr[NUM_ELEMENTS];
     for(int i = 0; i < NUM_ELEMENTS; i++) { //arrayIndexOutOfBounds
         arr[i] = i;
+        printf(arr[i]);
     }
 
     return 0;

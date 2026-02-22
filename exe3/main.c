@@ -26,26 +26,27 @@ int main() {
   gpio_init(LED_G);
   gpio_set_dir(LED_G, GPIO_OUT);
   
+  int state_g = 0;  
+  int state_r = 0;  
+
   while (true) {
-    if (!gpio_get(BTN_R)) {
-      gpio_put(LED_R, 1);
-
-      sleep_ms(250);
-      while (!gpio_get(BTN_R));
-      gpio_put(LED_R, 0);
-
-      sleep_ms(250);
-  // aguarda soltar
-    }
     if (!gpio_get(BTN_G)) {
-      gpio_put(LED_G, 1);
-
-      sleep_ms(250);
-      while (!gpio_get(BTN_G));
-      
-      gpio_put(LED_G, 0);
-
-      sleep_ms(250);   // aguarda soltar
+        sleep_ms(50);                    
+        if (!gpio_get(BTN_G)) {
+            state_g = !state_g;          
+            gpio_put(LED_G, state_g);
+            while (!gpio_get(BTN_G));    
+            sleep_ms(50);
+        }
+      }
+    if (!gpio_get(BTN_R)) {
+        sleep_ms(50);
+        if (!gpio_get(BTN_R)) {
+            state_r = !state_r;          
+            gpio_put(LED_R, state_r);
+            while (!gpio_get(BTN_R));
+            sleep_ms(50);
+        }
+      }
     }
-  }
 }
